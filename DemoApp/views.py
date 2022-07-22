@@ -1,20 +1,25 @@
+from itertools import product
 from django.shortcuts import render
 from django.http import HttpResponse
+from DemoApp.models import Products
 # Create your views here.
 def temp(req):
-    return render(req,'DemoApp/index.html')
-
-def signin(req):
-    return render(req, 'DemoApp/signin.html')
+    detail = Products.objects.all()
+    print("the details ----> ", detail.values())
+    return render(req,'DemoApp/index.html',{'detail':detail})
 
 def wine(req):
-    return render(req, 'DemoApp/products/wine.html')
+    detail = Products.objects.all()
+    return render(req, 'DemoApp/products/wine.html',{'detail':detail})
 
 def beer(req):
-    return render(req, 'DemoApp/products/beer.html')
+    detail = Products.objects.all()
+    return render(req, 'DemoApp/products/beer.html',{'detail':detail})
 
 def champagne(req):
-    return render(req, 'DemoApp/products/champagne.html')
+    detail = Products.objects.all()
+    return render(req, 'DemoApp/products/champagne.html',{'detail':detail})
 
 def vodka(req):
-    return render(req, 'DemoApp/products/vodka.html')
+    detail = Products.objects.all()
+    return render(req, 'DemoApp/products/vodka.html',{'detail':detail})

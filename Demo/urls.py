@@ -15,12 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 
-from DemoApp.views import beer, champagne, signin, temp, vodka, wine
+from DemoApp.views import beer, champagne, temp, vodka, wine
+
+# Django admin header customization
+
+admin.site.site_header = "Developer ASK"
+admin.site.site_title = "WellCome to the ASK Dashboard"
+admin.site.index_title = "Wellcome"
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('signin/', signin),
     path('wine/', wine),
     path('vodka/', vodka),
     path('champagne/', champagne),
@@ -28,3 +36,6 @@ urlpatterns = [
     path('',temp),
    
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)
