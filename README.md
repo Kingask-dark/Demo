@@ -1,7 +1,7 @@
 
 # DEMO 
 
-This is simple project. It is a college project
+This is simple Django project.
 
 
 ## Installation
