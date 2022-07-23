@@ -24,7 +24,7 @@ Run Demo
 ![Project Screenshots](/static/images/ProjectPic.png?raw=true "Optional Title")
 
 
-## Authors
+## Author
 
 - [@Kingask-dark](https://github.com/Kingask-dark)
 
