@@ -22,9 +22,9 @@ from DemoApp.views import beer, champagne, temp, vodka, wine
 
 # Django admin header customization
 
-admin.site.site_header = "Developer ASK"
-admin.site.site_title = "WellCome to the ASK Dashboard"
-admin.site.index_title = "Wellcome"
+admin.site.site_header = "D-Drink Admin Pannel"
+admin.site.site_title = "WellCome to D-Drink Dashboard"
+admin.site.index_title = "Admin"
 
 
 urlpatterns = [
