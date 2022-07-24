@@ -9,20 +9,21 @@
  
     <section class="text-gray-400 bg-gray-900 body-font">
         <div class="container px-5 py-24 mx-auto">
-         
           <div class="flex flex-wrap -m-4">
             {% if detail %}
             {% for data in detail %}
             <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <a class="block relative h-48 rounded overflow-hidden">
-                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="/media/{{data.productImage}}">
+                <a href="{% url 'detail' %}" class="cursor-pointer">
+                <a class="block relative h-48 rounded overflow-hidden">
+                  <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="/media/{{data.productImage}}">
+                </a>
+                <div class="mt-4">
+                  <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">{{data.productCategory}}</h3>
+                  <h2 class="text-white title-font text-lg font-medium">{{data.productName}}</h2>
+                  <p class="mt-1">${{data.productCost}}</p>
+                </div>
               </a>
-              <div class="mt-4">
-                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">{{data.productCategory}}</h3>
-                <h2 class="text-white title-font text-lg font-medium">{{data.productName}}</h2>
-                <p class="mt-1">${{data.productCost}}</p>
               </div>
-            </div>
             {% endfor %}
             {% endif %}
           </div>

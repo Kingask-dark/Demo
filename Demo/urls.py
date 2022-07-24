@@ -18,7 +18,7 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
-from DemoApp.views import beer, champagne, temp, vodka, wine
+from DemoApp.views import beer, champagne, details, temp, vodka, wine
 
 # Django admin header customization
 
@@ -34,6 +34,7 @@ urlpatterns = [
     path('champagne/', champagne),
     path('beer/', beer),
     path('',temp),
+    path('/detail',details,name='detail')
    
 ]
 

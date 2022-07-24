@@ -23,3 +23,7 @@ def champagne(req):
 def vodka(req):
     detail = Products.objects.filter(productCategory = 'Vodka').order_by('?')
     return render(req, 'DemoApp/products/vodka.html',{'detail':detail})
+
+def details(req):
+    detail = Products.objects.all()
+    return render(req,'DemoApp/detail.html',{'detail':detail})
