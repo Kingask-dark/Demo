@@ -26,17 +26,16 @@ admin.site.site_header = "D-Drink Admin Pannel"
 admin.site.site_title = "WellCome to D-Drink Dashboard"
 admin.site.index_title = "Admin"
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('wine/', wine),
     path('vodka/', vodka),
     path('champagne/', champagne),
     path('beer/', beer),
-    path('',temp),
-    path('/detail',details,name='detail')
-   
+    path('', temp),
+    path('detail/<int:product_id>', details, name='details')
+
 ]
 
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
