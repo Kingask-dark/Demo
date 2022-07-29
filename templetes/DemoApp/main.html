@@ -21,7 +21,7 @@
                             <h2 class="text-white title-font text-lg font-medium">{{data.productName}}</h2>
                             <p class="mt-1">${{data.productCost}}</p>
                         </div>
-                    <a href="/detail/{{ data.id }}">Detail</a>
+                    <a href="/detail/{{ data.id }}/{{ data.productName }}">Detail</a>
                     </div>
                 {% endfor %}
             {% endif %}

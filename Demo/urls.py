@@ -18,7 +18,7 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
-from DemoApp.views import beer, champagne, details, temp, vodka, wine
+from DemoApp.views import beer, champagne, details, logIn, logOut, profile, signUp, temp, vodka, wine
 
 # Django admin header customization
 
@@ -33,7 +33,11 @@ urlpatterns = [
     path('champagne/', champagne),
     path('beer/', beer),
     path('', temp),
-    path('detail/<int:product_id>', details, name='details')
+    path('detail/<int:product_id>/<str:product_name>', details, name='details'),
+    path('signUp/',signUp),
+    path('logIn/',logIn),
+    path('logOut/',logOut),
+    path('profile/',profile)
 
 ]
 
