@@ -1,3 +1,11 @@
+{% url 'home' as home_url %}
+{% url 'wine' as wine_url %}
+{% url 'vodka' as vodka_url %}
+{% url 'champagne' as champagne_url %}
+{% url 'beer' as beer_url %}
+{% url 'profile' as profile_url %}
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -5,6 +13,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navigation</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .active{
+        color: red;
+      }
+    </style>
 </head>
 <body>
     <header class="text-gray-400 bg-gray-900 body-font relative overflow-auto">
@@ -14,13 +27,13 @@
            <img src="{% static '/images/logo.svg' %}" width="179" height="50" alt="LOGO">
           </a>
           <nav class="md:ml-auto md:mr-auto flex  items-center text-base justify-center">
-            <a href="/" class="mr-5 hover:text-white">Home</a>
-            <a href="/wine" class="mr-5 hover:text-white">Wine</a>
-            <a href="/vodka" class="mr-5 hover:text-white">Vodka</a>
-            <a href="/champagne" class="mr-5 hover:text-white">Champagne</a>
-            <a href="/beer" class="mr-5 hover:text-white">Beer</a>
+            <a href="/" class="{% if request.path == home_url %} active {% endif %} mr-5 hover:text-white">Home</a>
+            <a href="/wine" class="{% if request.path == wine_url %} active {% endif %} mr-5 hover:text-white">Wine</a>
+            <a href="/vodka" class="{% if request.path == vodka_url %} active {% endif %} mr-5 hover:text-white">Vodka</a>
+            <a href="/champagne" class="{% if request.path == champagne_url %} active {% endif %} mr-5 hover:text-white">Champagne</a>
+            <a href="/beer" class="{% if request.path == beer_url %} active {% endif %} mr-5 hover:text-white">Beer</a>
             {% if user.is_authenticated %}
-            <a href="/profile" class="mr-5 text-red-400 hover:text-white">{{username.capitalize}}</a>
+            <a href="/profile" class="{% if request.path == profile_url %} active {% endif %} mr-5 text-red-400 hover:text-white">{{username.capitalize}}</a>
             {% endif %}
           </nav>
           {% if user.is_authenticated %}

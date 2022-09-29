@@ -21,7 +21,13 @@ Run Demo
 ```
 ## Screenshots
 
-![Project Screenshots](/static/images/ProjectPic.png?raw=true "Optional Title")
+![Project Screenshots](/static/images/ProjectPic.png?raw=true "Home")
+![Project Screenshots](/static/images/ProjectPic1.png?raw=true "Wine")
+![Project Screenshots](/static/images/ProjectPic2.png?raw=true "Vodka")
+![Project Screenshots](/static/images/ProjectPic3.png?raw=true "Champagne")
+![Project Screenshots](/static/images/ProjectPic4.png?raw=true "Beer")
+![Project Screenshots](/static/images/LoginPic.png?raw=true "Login")
+![Project Screenshots](/static/images/SigninPic.png?raw=true "SignIn")
 
 
 ## Author

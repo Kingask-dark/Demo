@@ -28,16 +28,16 @@ admin.site.index_title = "Admin"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('wine/', wine),
-    path('vodka/', vodka),
-    path('champagne/', champagne),
-    path('beer/', beer),
-    path('', temp),
+    path('wine/', wine, name='wine'),
+    path('vodka/', vodka, name='vodka'),
+    path('champagne/', champagne, name='champagne'),
+    path('beer/', beer, name='beer'),
+    path('', temp, name='home'),
     path('detail/<int:product_id>/<str:product_name>', details, name='details'),
     path('signUp/',signUp),
     path('logIn/',logIn),
     path('logOut/',logOut),
-    path('profile/',profile)
+    path('profile/',profile, name='profile')
 
 ]
 
