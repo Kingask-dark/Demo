@@ -28,9 +28,9 @@ TEMPLATE_DIR = os.path.join(BASE_DIR,'templetes')
 SECRET_KEY = 'django-insecure-&1nzm5csu4vl#y!&+$1v0av#qr&h@eo8o&@74b!6$p^nbjm1%z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
 
 # Application definition
