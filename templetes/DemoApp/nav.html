@@ -17,6 +17,18 @@
       .active{
         color: red;
       }
+      .profile{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 10px;
+        border-style: solid;
+        border-radius: 50%;
+        background-color: rgb(31 41 55);
+      }
+      .profileactive{
+        color: red;
+      }
     </style>
 </head>
 <body>
@@ -32,10 +44,10 @@
             <a href="/vodka" class="{% if request.path == vodka_url %} active {% endif %} mr-5 hover:text-white">Vodka</a>
             <a href="/champagne" class="{% if request.path == champagne_url %} active {% endif %} mr-5 hover:text-white">Champagne</a>
             <a href="/beer" class="{% if request.path == beer_url %} active {% endif %} mr-5 hover:text-white">Beer</a>
-            {% if user.is_authenticated %}
-            <a href="/profile" class="{% if request.path == profile_url %} active {% endif %} mr-5 text-red-400 hover:text-white">{{username.capitalize}}</a>
-            {% endif %}
           </nav>
+          {% if user.is_authenticated %}
+          <a href="/profile" class=" profile {% if request.path == profile_url %} profileactive {% endif %} mr-5 hover:text-white hover:bg-gray-700">Profile</a>
+          {% endif %}
           {% if user.is_authenticated %}
           <button type="submit" class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0"><a href="/logOut">Logout
           </a>

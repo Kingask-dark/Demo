@@ -9,33 +9,40 @@ from django.contrib.auth import authenticate,login,logout
 def temp(req):
     # return redirect('/logIn/')
     detail = Products.objects.all().order_by('?')
+    userDetails = req.user
     # print("the details ----> ", detail.values())
-    return render(req, 'DemoApp/index.html', {'detail': detail})
+    return render(req, 'DemoApp/index.html', {'detail': detail , 'userDetails': userDetails})
 
 
 def wine(req):
     detail = Products.objects.filter(productCategory='Wine').order_by('?')
-    return render(req, 'DemoApp/products/wine.html', {'detail': detail})
+    userDetails = req.user
+    print(userDetails)
+    return render(req, 'DemoApp/products/wine.html', {'detail': detail , 'userDetails': userDetails})
 
 
 def beer(req):
-    detail = Products.objects.filter(productCategory='Beer').order_by('?')
-    return render(req, 'DemoApp/products/beer.html', {'detail': detail})
+    detail = Products.objects.filter(productCategory='Beer').order_by('?') 
+    userDetails = req.user
+    return render(req, 'DemoApp/products/beer.html', {'detail': detail , 'userDetails': userDetails})
 
 
 def champagne(req):
     detail = Products.objects.filter(productCategory='Champagne').order_by('?')
-    return render(req, 'DemoApp/products/champagne.html', {'detail': detail})
+    userDetails = req.user
+    return render(req, 'DemoApp/products/champagne.html', {'detail': detail , 'userDetails': userDetails})
 
 
 def vodka(req):
     detail = Products.objects.filter(productCategory='Vodka').order_by('?')
-    return render(req, 'DemoApp/products/vodka.html', {'detail': detail})
+    userDetails = req.user
+    return render(req, 'DemoApp/products/vodka.html', {'detail': detail , 'userDetails': userDetails})
 
 
 def details(req,product_id ,product_name):
     detail = Products.objects.get(id=product_id ,productName = product_name )
-    return render(req, 'DemoApp/detail.html', {'product': detail})
+    userDetails = req.user
+    return render(req, 'DemoApp/detail.html', {'product': detail,'userDetails': userDetails})
 
 def signUp(req):
 
